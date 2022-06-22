@@ -135,7 +135,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_APP_API_URL),
+  history: createWebHistory(),
+  // history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 
   scrollBehavior(to, from, savedPosition) {
@@ -148,33 +149,33 @@ const router = createRouter({
   },
 });
 
-router.afterEach((to, from) => {
-  const toDepth = to.path.split("/").length;
-  const fromDepth = from.path.split("/").length;
-  to.meta.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
-});
+// router.afterEach((to, from) => {
+//   const toDepth = to.path.split("/").length;
+//   const fromDepth = from.path.split("/").length;
+//   to.meta.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
+// });
 
-router.beforeEach((to, from, next) => {
-  const userIsLoggedOut = !window.localStorage.getItem("token");
-  const routeIsGuarded = !to.meta.noAuth;
-  const routeIsGuestOnly = !!to.meta.guestOnly;
+// router.beforeEach((to, from, next) => {
+//   const userIsLoggedOut = !window.localStorage.getItem("token");
+//   const routeIsGuarded = !to.meta.noAuth;
+//   const routeIsGuestOnly = !!to.meta.guestOnly;
 
-  window.scrollTo(window.scrollX, 0);
+//   window.scrollTo(window.scrollX, 0);
 
-  if (routeIsGuarded) {
-    if (userIsLoggedOut) {
-      return next({ name: "Login", query: { redirect: to.path } });
-    }
+//   if (routeIsGuarded) {
+//     if (userIsLoggedOut) {
+//       return next({ name: "Login", query: { redirect: to.path } });
+//     }
 
-    return next();
-  } else {
-    // this is so that you can't access the guestOnly except you are logged out
-    if (routeIsGuestOnly && !userIsLoggedOut) {
-      return next({ name: "Home" });
-    }
+//     return next();
+//   } else {
+//     // this is so that you can't access the guestOnly except you are logged out
+//     if (routeIsGuestOnly && !userIsLoggedOut) {
+//       return next({ name: "Home" });
+//     }
 
-    return next();
-  }
-});
+//     return next();
+//   }
+// });
 
 export default router;
