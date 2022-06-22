@@ -163,7 +163,7 @@
           </label>
           <input
             type="submit"
-            value="Continue to checkout"
+            value="Continue & Pay"
             class="mt-4 py-2 w-full bg-black text-sm text-white cursor-pointer hover:scale-y-105"
           />
         </form>
