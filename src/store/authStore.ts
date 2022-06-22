@@ -23,23 +23,23 @@ const mutations = {
 
 const actions = {
   login: async (data: any) => {
-    const apiCall = await userApi.login(data);
+    // const apiCall = await userApi.login(data);
 
-    const result = apiCall;
+    // const result = apiCall;
 
-    if (result) {
-      mutations.setUser(result);
+    // if (result) {
+    //   mutations.setUser(result);
 
-      return {
-        success: true,
-        message: "Success",
-      };
-    } else {
-      return {
-        success: false,
-        message: "Fail",
-      };
-    }
+    //   return {
+    //     success: true,
+    //     message: "Success",
+    //   };
+    // } else {
+    //   return {
+    //     success: false,
+    //     message: "Fail",
+    //   };
+    // }
   },
 };
 

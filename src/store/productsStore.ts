@@ -27,39 +27,39 @@ const setSingleProduct = (payload: Product) => {
 };
 
 const getProducts = async () => {
-  const apiPath = await productsApi.getProducts();
+  // const apiPath = await productsApi.getProducts();
 
-  const result = apiPath.data;
+  // const result = apiPath.data;
 
-  if (result) {
-    setProducts(result);
+  // if (result) {
+  //   setProducts(result);
 
-    return {
-      success: true,
-    };
-  } else {
-    return {
-      success: false,
-    };
-  }
+  //   return {
+  //     success: true,
+  //   };
+  // } else {
+  //   return {
+  //     success: false,
+  //   };
+  // }
 };
 
 const getProductCategory = async (cat: string) => {
-  const apiPath = await productsApi.getProductCategory(cat);
+  // const apiPath = await productsApi.getProductCategory(cat);
 
-  const result = apiPath.data;
+  // const result = apiPath.data;
 
-  if (result) {
-    setProductCategory(result);
+  // if (result) {
+  //   setProductCategory(result);
 
-    return {
-      success: true,
-    };
-  } else {
-    return {
-      success: false,
-    };
-  }
+  //   return {
+  //     success: true,
+  //   };
+  // } else {
+  //   return {
+  //     success: false,
+  //   };
+  // }
 };
 
 export default {
