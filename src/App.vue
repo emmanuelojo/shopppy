@@ -1,21 +1,32 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
+import authStore from "./store/authStore";
 // This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+
+onMounted(() => {
+  bgStatus.value;
+});
+
+const bgStatus = ref(authStore.getters.bgStatus);
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div
+    class="h-screen overflow-y-auto"
+    :class="bgStatus ? 'bg-white' : 'bg-green-300'"
+  >
+    <router-view />
+  </div>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Inter";
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
