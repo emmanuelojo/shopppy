@@ -9,7 +9,7 @@
           @click="$router.back()"
           class="shopping flex justify-center items-center border py-1 px-2 bg-white"
         >
-          <p class="uppercase text-xs md:text-sm font-semibold text-black">
+          <p class="uppercase text-xs md:text-sm font-semibold text-black hover:scale-105">
             Continue Shopping
           </p>
         </button>
@@ -24,7 +24,7 @@
         </div>
 
         <button class="bg-black px-2 py-[6px]">
-          <p @click="checkout" class="text-white uppercase text-xs md:text-sm">
+          <p @click="checkout" class="text-white uppercase text-xs md:text-sm hover:scale-105">
             checkout now
           </p>
         </button>
@@ -129,7 +129,7 @@
           </div>
 
           <button class="w-full flex justify-center items-center bg-black p-2">
-            <p @click="checkout" class="text-white uppercase">checkout now</p>
+            <p @click="checkout" class="text-white uppercase hover:scale-105">checkout now</p>
           </button>
         </div>
       </div>
