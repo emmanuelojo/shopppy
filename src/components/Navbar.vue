@@ -58,7 +58,7 @@
   <transition v-if="showNotification" name="fade" mode="out-in" appear>
     <div class="bg-green-400 py-2 px-4 relative">
       <p class="flex justify-center text-xs text-white">
-        Super Deals. Free Shipping on Orders Over $50
+        Super Deals. Free Shipping on Orders Over {{ formatCurrency('en-ng', 5000, 'ngn')}}
       </p>
 
       <div
@@ -73,6 +73,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import { formatCurrency } from "../utils/helpers";
 
 export default defineComponent({
   name: "Navbar",
@@ -82,6 +83,7 @@ export default defineComponent({
 
     return {
       showNotification,
+      formatCurrency
     };
   },
 });

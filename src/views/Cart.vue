@@ -100,7 +100,7 @@
               </div>
               <p class="product__amount text-2xl">
                 {{
-                  formatCurrency("en-us", item.amount * item.quantity, "NGN")
+                  formatCurrency("en-ng", item.amount * item.quantity, "NGN")
                 }}
               </p>
             </div>
@@ -113,18 +113,18 @@
           </p>
           <div class="flex justify-between items-center my-4">
             <p class="font-semibold text-[rgba(0,0,0,0.8)]">Subtotal</p>
-            <p>{{ formatCurrency("en-us", subTotal, "NGN") }}</p>
+            <p>{{ formatCurrency("en-ng", subTotal, "NGN") }}</p>
           </div>
           <div class="flex justify-between items-center my-4">
             <p class="font-semibold text-[rgba(0,0,0,0.8)]">
               Estimated Shipping
             </p>
-            <p>{{ formatCurrency("en-us", shippingFee, "NGN") }}</p>
+            <p>{{ formatCurrency("en-ng", shippingFee, "NGN") }}</p>
           </div>
           <div class="flex justify-between items-center my-4">
             <p class="font-semibold text-[rgba(0,0,0,0.8)] text-lg">Total</p>
             <p class="text-lg">
-              {{ formatCurrency("en-us", shippingFee + subTotal, "NGN") }}
+              {{ formatCurrency("en-ng", shippingFee + subTotal, "NGN") }}
             </p>
           </div>
 

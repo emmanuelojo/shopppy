@@ -21,20 +21,20 @@
 
         <div class="icons flex justify-center items-center gap-5">
           <div
-            class="icon bg-gray-200 hover:bg-red-200 hover:text-white cursor-pointer w-8 h-8 rounded-full flex justify-center items-center"
+            class="icon bg-gray-200 hover:bg-green-400 hover:text-white cursor-pointer w-8 h-8 rounded-full flex justify-center items-center"
           >
             <i class="fa fa-shopping-cart"></i>
           </div>
 
           <div
-            class="icon bg-gray-200 hover:bg-red-200 hover:text-white cursor-pointer w-8 h-8 rounded-full flex justify-center items-center"
+            class="icon bg-gray-200 hover:bg-green-400 hover:text-white cursor-pointer w-8 h-8 rounded-full flex justify-center items-center"
             @click="goToProduct(product)"
           >
             <i class="fa fa-search"></i>
           </div>
 
           <div
-            class="icon bg-gray-200 hover:bg-red-200 hover:text-white cursor-pointer w-8 h-8 rounded-full flex justify-center items-center"
+            class="icon bg-gray-200 hover:bg-green-400 hover:text-white cursor-pointer w-8 h-8 rounded-full flex justify-center items-center"
           >
             <i class="fa fa-heart"></i>
           </div>

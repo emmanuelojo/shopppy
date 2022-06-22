@@ -23,7 +23,7 @@
       </p>
 
       <p class="product__detail__price my-3 font-medium text-3xl">
-        {{ formatCurrency("en-us", 20 * productQuantity, "NGN") }}
+        {{ formatCurrency("en-ng", 20 * productQuantity, "NGN") }}
       </p>
 
       <div class="colour flex justify-between">

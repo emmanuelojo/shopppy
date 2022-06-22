@@ -190,14 +190,14 @@
             </div>
 
             <p class="text-sm font-medium">
-              {{ formatCurrency("en-us", item.amount, "NGN") }}
+              {{ formatCurrency("en-ng", item.amount, "NGN") }}
             </p>
           </div>
         </div>
         <hr />
         <p class="my-2 mx-4 flex justify-between items-center font-semibold">
           <span> Total </span>
-          <span class=" "> {{ formatCurrency("en-us", total, "NGN") }}</span>
+          <span class=" "> {{ formatCurrency("en-ng", total, "NGN") }}</span>
         </p>
       </div>
     </div>
