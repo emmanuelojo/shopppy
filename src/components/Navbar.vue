@@ -42,10 +42,10 @@
         >
           <i class="fa fa-shopping-cart"></i>
           <div
-            class="absolute -top-1 -right-2 bg-blue-800 w-4 h-4 pb-1 px-[6px] rounded-full"
+            class="absolute -top-1 -right-2 bg-green-400 w-4 h-4 pb-1 px-[6px] rounded-full"
           >
             <p
-              class="flex justify-center items-center text-xxs text-white font-bold"
+              class="mt-[1px] flex justify-center items-center text-xxs text-white font-bold"
             >
               3
             </p>
