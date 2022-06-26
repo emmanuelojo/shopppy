@@ -7,6 +7,7 @@ module.exports = {
         pry: "#63FDFF",
         "n-black": "#222222",
         "n-gray": "#777777",
+        'n-gray-sec': '#bbbbbb'
       },
       gridTemplateColumns: {
         "1fr-1fr": "1fr 1fr",
