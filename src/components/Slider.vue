@@ -1,5 +1,5 @@
 <template>
-  <div class="h-fit"><p>{{ slideArray.length }}</p>
+  <div class="h-fit">
     <div class="slideshow-container w-full">
       <div class="mySlides fade relative">
         <div class="numbertext">{{ slideArray[activeSlideIndex].id}} / 4</div>
