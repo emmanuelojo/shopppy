@@ -14,6 +14,12 @@
           <p class="uppercase font-medium">
             {{ slideArray[activeSlideIndex].desc }}
           </p>
+          <div class="link mt-5 flex justify-center md:justify-start">
+            <a class="capitalize py-2 px-3 border border-black hover:bg-white hover:border-none cursor-pointer"
+            >
+              Shop Now
+            </a>
+          </div>
         </div>
       </div>
 
