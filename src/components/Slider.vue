@@ -95,7 +95,7 @@ export default defineComponent({
 
     setInterval(() => {
       activeSlideIndex.value++;
-      if (activeSlideIndex.value > 4) activeSlideIndex.value = 0;
+      if (activeSlideIndex.value === 4) activeSlideIndex.value = 0;
     }, 5000); 
 
     return {
