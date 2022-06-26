@@ -1,6 +1,6 @@
 <template>
   <div
-    class="product px-4 md:px-10 md:mb-32 md:grid md:grid-cols-2 md:gap-10 mt-5 lg:mt-16"
+    class="product px-4 md:px-10 md:mb-32 md:grid md:grid-cols-2 md:gap-10 mt-5 lg:mt-16" ref="listContainer"
   >
     <div class="product__image flex justify-center">
       <img
@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onMounted, ref, Ref } from "vue";
 import router from "../router";
 import { formatCurrency } from "../utils/helpers";
 
@@ -93,7 +93,13 @@ export default defineComponent({
       // await productsStore.actions.getProductCategory(categoryName.toString());
       routeParam.value;
       getProduct();
+      
+      listContainer.value.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
     });
+    const listContainer = ref() as Ref<HTMLDivElement>
 
     const routeParam = ref(router.currentRoute.value.params.productId);
 

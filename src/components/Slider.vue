@@ -30,7 +30,7 @@
     <br />
 
     <div style="text-align: center">      
-      <span v-for="(slide, idx) in slideArray" :key="idx" class="dot bg-n-gray hover:bg-green-400" @click="currentSlide(idx)"></span>
+      <span v-for="(slide, idx) in slideArray" :key="idx" class="dot hover:bg-green-400" :class="idx === activeSlideIndex ? 'bg-green-400' : 'bg-n-gray'" @click="currentSlide(idx)"></span>
     </div>
   </div>
 </template>

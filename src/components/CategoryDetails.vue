@@ -1,5 +1,5 @@
 <template>
-  <div class="category px-4 md:px-10">
+  <div class="category px-4 md:px-10" ref="listContainer">
     <div class="category__name py-3">
       <p class="font-bold text-xl">
         {{ capitalizeText(categoryName.toString()) }}
@@ -77,7 +77,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from "vue";
+import { defineComponent, onMounted, ref, Ref, watch } from "vue";
 import router from "../router";
 import productsStore from "../store/productsStore";
 import { capitalizeText } from "../utils/helpers";
@@ -93,7 +93,15 @@ export default defineComponent({
       // await productsStore.actions.getProductCategory(categoryName.toString());
       routeParam.value;
       getProducts();
+
+      
+      listContainer.value.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
     });
+    
+    const listContainer = ref() as Ref<HTMLDivElement>
 
     const routeParam = ref(router.currentRoute.value.params.category);
 
