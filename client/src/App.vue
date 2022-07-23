@@ -20,10 +20,10 @@ const bgStatus = ref(authStore.getters.bgStatus);
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap");
 
 #app {
-  font-family: "Inter";
+  font-family: "Urbanist";
 }
 body {
   margin: 0;
