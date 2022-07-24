@@ -4,6 +4,7 @@ import {
   getAllUsers,
   getUser,
   updateUser,
+  usersStats,
 } from "../controllers/usersController.js";
 import {
   verifyTokenAndAdmin,
@@ -14,12 +15,12 @@ const router = express.Router();
 
 router.get("/", verifyTokenAndAdmin, getAllUsers);
 
-// router.get("/find/:id", verifyTokenAndAdmin, getUser);
-
-router.get("/:id", verifyTokenAndAdmin, getUser);
+router.get("/find/:id", verifyTokenAndAdmin, getUser);
 
 router.put("/:id", verifyTokenAndAuthorization, updateUser);
 
 router.delete("/:id", verifyTokenAndAdmin, deleteUser);
+
+router.get("/stats", verifyTokenAndAdmin, usersStats);
 
 export default router;

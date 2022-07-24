@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js";
+import productRoutes from "./routes/products.js";
+import cartRoutes from "./routes/carts.js";
+import orderRoutes from "./routes/orders.js";
+import stripeRoutes from "./routes/stripe.js";
 import cors from "cors";
 
 const app = express();
@@ -41,6 +45,10 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/carts", cartRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payment", stripeRoutes);
 
 app.listen(PORT, () => {
   connect();

@@ -32,7 +32,7 @@ export const verifyTokenAndAuthorization = (req, res, next) => {
     } else {
       return res.status(403).json({
         status: 403,
-        error: "User not authorized",
+        error: "User is not authorized",
         message: "failed",
       });
     }

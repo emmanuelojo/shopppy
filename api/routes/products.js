@@ -1,25 +1,31 @@
 import express from "express";
+import {
+  createProduct,
+  getAllProducts,
+  getProduct,
+  updateProduct,
+  deleteProduct,
+} from "../controllers/productsController.js";
+
+import {
+  verifyTokenAndAdmin,
+  verifyTokenAndAuthorization,
+} from "../utils/VerifyToken.js";
 
 const router = express.Router();
 
-router.post("/", (req, res, next) => {
-  res.send("Test is successful");
-});
+router.post("/", verifyTokenAndAdmin, createProduct);
 
-router.get("/", (req, res, next) => {
-  res.send("Test is successful");
-});
+router.get("/", getAllProducts);
 
-router.get("/:id", (req, res, next) => {
-  res.send("Test is successful");
-});
+// router.get("/find/:id", verifyTokenAndAdmin, getProduct);
 
-router.patch("/", (req, res, next) => {
-  res.send("Test is successful");
-});
+router.get("/:id", getProduct);
 
-router.delete("/:id", (req, res, next) => {
-  res.send("Test is successful");
-});
+router.put("/:id", verifyTokenAndAdmin, updateProduct);
+
+router.delete("/:id", verifyTokenAndAdmin, deleteProduct);
+
+// router.get("/stats", verifyTokenAndAdmin, usersStats);
 
 export default router;

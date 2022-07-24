@@ -1,12 +1,12 @@
-import express from "express";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 
-const router = express.Router();
-
 export const getAllUsers = async (req, res, next) => {
+  const query = req.query.new;
   try {
-    const users = await User.find();
+    const users = query
+      ? await User.find().sort({ _id: -1 }).limit(5)
+      : await User.find();
 
     let modifiedUsers = [];
 
@@ -75,6 +75,36 @@ export const deleteUser = async (req, res, next) => {
     res.status(200).json({
       status: 200,
       data: "User has been deleted",
+      message: "Success",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const usersStats = async (req, res, next) => {
+  const date = new Date();
+  const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
+
+  try {
+    const data = await User.aggregate([
+      { $match: { createdAt: { $gte: lastYear } } },
+      {
+        $project: {
+          month: { $month: "$createdAt" },
+        },
+      },
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: 1 },
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      status: 200,
+      data: data,
       message: "Success",
     });
   } catch (error) {
