@@ -1,6 +1,6 @@
 <template>
   <div
-    class="product px-4 md:px-10 md:mb-32 md:grid md:grid-cols-2 md:gap-10 mt-5 lg:mt-16" ref="listContainer"
+    class="product px-4 md:px-10 md:mb-32 md:grid md:grid-cols-2 md:gap-10 mt-5 lg:mt-16"
   >
     <div class="product__image flex justify-center">
       <img
@@ -93,13 +93,12 @@ export default defineComponent({
       // await productsStore.actions.getProductCategory(categoryName.toString());
       routeParam.value;
       getProduct();
-      
-      listContainer.value.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
-    const listContainer = ref() as Ref<HTMLDivElement>
 
     const routeParam = ref(router.currentRoute.value.params.productId);
 

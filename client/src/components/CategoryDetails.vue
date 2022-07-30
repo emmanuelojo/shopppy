@@ -1,5 +1,5 @@
 <template>
-  <div class="category px-4 md:px-10" ref="listContainer">
+  <div class="category px-4 md:px-10">
     <div class="category__name py-3">
       <p class="font-bold text-xl">
         {{ capitalizeText(categoryName.toString()) }}
@@ -94,14 +94,11 @@ export default defineComponent({
       routeParam.value;
       getProducts();
 
-      
-      listContainer.value.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
-    
-    const listContainer = ref() as Ref<HTMLDivElement>
 
     const routeParam = ref(router.currentRoute.value.params.category);
 
